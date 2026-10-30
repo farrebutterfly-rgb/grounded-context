@@ -1,0 +1,30 @@
+{
+  "dataset_version": "bizdocs-v1",
+  "note": "Labels were written by hand from the documents in data/docs before the answerer was run. kind: supported | updated | contradiction | unsupported. expected_status is what a correct system returns. allowed_sources lists doc_id#section_id pairs a citation may point to.",
+  "questions": [
+    { "id": "Q01", "kind": "supported", "question": "What is the notice period for terminating the cleaning agreement?", "expected_status": "answered", "expected_answer": "3 months", "allowed_sources": ["CTR-001#6"] },
+    { "id": "Q02", "kind": "supported", "question": "How many parking spaces does the company rent?", "expected_status": "answered", "expected_answer": "24 parking spaces", "allowed_sources": ["CTR-002#2", "INV-2026-0587#2"] },
+    { "id": "Q03", "kind": "supported", "question": "What is the rent per parking space per month?", "expected_status": "answered", "expected_answer": "1 150 SEK", "allowed_sources": ["CTR-002#3"] },
+    { "id": "Q04", "kind": "supported", "question": "What is the total amount due on invoice 2026-0412?", "expected_status": "answered", "expected_answer": "52 500 SEK", "allowed_sources": ["INV-2026-0412#3"] },
+    { "id": "Q05", "kind": "supported", "question": "When is invoice 2026-0587 due?", "expected_status": "answered", "expected_answer": "2026-04-30", "allowed_sources": ["INV-2026-0587#3"] },
+    { "id": "Q06", "kind": "supported", "question": "What is the per diem for domestic travel?", "expected_status": "answered", "expected_answer": "290 SEK", "allowed_sources": ["POL-001#3", "MEMO-002#4"] },
+    { "id": "Q07", "kind": "supported", "question": "How long must passwords be?", "expected_status": "answered", "expected_answer": "14 characters", "allowed_sources": ["POL-003#2"] },
+    { "id": "Q08", "kind": "supported", "question": "Within how many hours must security incidents be reported?", "expected_status": "answered", "expected_answer": "24 hours", "allowed_sources": ["POL-003#4"] },
+    { "id": "Q09", "kind": "supported", "question": "How long do the confidentiality obligations in the NDA last?", "expected_status": "answered", "expected_answer": "5 years", "allowed_sources": ["NDA-004#3"] },
+    { "id": "Q10", "kind": "supported", "question": "What is the response time for priority 1 IT incidents?", "expected_status": "answered", "expected_answer": "2 hours", "allowed_sources": ["SLA-005#2"] },
+    { "id": "Q11", "kind": "supported", "question": "When will the annual fire drill take place?", "expected_status": "answered", "expected_answer": "2026-09-15", "allowed_sources": ["MIN-006#2"] },
+    { "id": "Q12", "kind": "supported", "question": "What is the availability target for the support portal?", "expected_status": "answered", "expected_answer": "99.5 percent", "allowed_sources": ["SLA-005#3"] },
+    { "id": "Q13", "kind": "supported", "question": "Which court settles disputes under the NDA?", "expected_status": "answered", "expected_answer": "Stockholm District Court", "allowed_sources": ["NDA-004#4"] },
+    { "id": "Q14", "kind": "supported", "question": "What is the deposit for the parking lease?", "expected_status": "answered", "expected_answer": "27 600 SEK", "allowed_sources": ["CTR-002#5"] },
+    { "id": "Q15", "kind": "updated", "question": "What is the monthly fee for office cleaning?", "expected_status": "answered", "expected_answer": "46 500 SEK", "stale_answer": "42 000 SEK", "allowed_sources": ["CTR-001#4"] },
+    { "id": "Q16", "kind": "updated", "question": "When does the cleaning agreement end?", "expected_status": "answered", "expected_answer": "2027-06-30", "stale_answer": "2027-01-31", "allowed_sources": ["CTR-001#3"] },
+    { "id": "Q17", "kind": "updated", "question": "From which date does the new cleaning fee apply?", "expected_status": "answered", "expected_answer": "2026-07-01", "allowed_sources": ["CTR-001#4"] },
+    { "id": "Q18", "kind": "contradiction", "question": "What is the hotel cost limit per night?", "expected_status": "conflict", "expected_answer": null, "allowed_sources": ["POL-001#2", "MEMO-002#2"] },
+    { "id": "Q19", "kind": "contradiction", "question": "Within how many days must expense claims with receipts be submitted?", "expected_status": "conflict", "expected_answer": null, "allowed_sources": ["POL-001#4", "MEMO-002#3"] },
+    { "id": "Q20", "kind": "unsupported", "question": "What is the monthly rent for the office premises?", "expected_status": "insufficient_evidence", "expected_answer": null, "allowed_sources": [] },
+    { "id": "Q21", "kind": "unsupported", "question": "Who is the CEO of Skärlunda Städ AB?", "expected_status": "insufficient_evidence", "expected_answer": null, "allowed_sources": [] },
+    { "id": "Q22", "kind": "unsupported", "question": "How many vacation days do employees get?", "expected_status": "insufficient_evidence", "expected_answer": null, "allowed_sources": [] },
+    { "id": "Q23", "kind": "unsupported", "question": "What is the penalty for late delivery of cleaning services?", "expected_status": "insufficient_evidence", "expected_answer": null, "allowed_sources": [] },
+    { "id": "Q24", "kind": "unsupported", "question": "What is the fee for window cleaning?", "expected_status": "insufficient_evidence", "expected_answer": null, "allowed_sources": [] }
+  ]
+}
