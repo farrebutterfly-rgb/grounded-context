@@ -1,0 +1,1255 @@
+{"session":{"type":"session","ts":"2026-10-30T05:14:09.680Z","code_rev":"d35cb29","dataset":"bizdocs-v1","node":"v22.23.4","mode":"fixture","answerer":"fixture:extractive"},
+  "config": {
+    "budget_tokens_est": 500,
+    "token_method": "estimate: ceil(chars/4), no tokenizer",
+    "retrieval": "BM25 (k1=1.2, b=0.75) over current document versions, top 4 sections",
+    "answerer": "fixture:extractive (deterministic, not a language model)",
+    "thresholds": {
+      "min_coverage": 0.6,
+      "min_coverage_text": 0.75,
+      "conflict_margin": 0.1
+    }
+  },
+  "qa": {
+    "summary": {
+      "pass": 22,
+      "total": 24,
+      "by_kind": {
+        "supported": {
+          "pass": 13,
+          "total": 14
+        },
+        "updated": {
+          "pass": 2,
+          "total": 3
+        },
+        "contradiction": {
+          "pass": 2,
+          "total": 2
+        },
+        "unsupported": {
+          "pass": 5,
+          "total": 5
+        }
+      },
+      "failed": [
+        {
+          "id": "Q09",
+          "reasons": [
+            "status insufficient_evidence, expected answered",
+            "answer lacks \"5 years\""
+          ]
+        },
+        {
+          "id": "Q17",
+          "reasons": [
+            "status insufficient_evidence, expected answered",
+            "answer lacks \"2026-07-01\""
+          ]
+        }
+      ]
+    },
+    "results": [
+      {
+        "id": "Q01",
+        "kind": "supported",
+        "question": "What is the notice period for terminating the cleaning agreement?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "3 months",
+          "citations": [
+            {
+              "doc_id": "CTR-001",
+              "section_id": "6",
+              "quote": "Either party may terminate the agreement with a notice period of 3 months."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q02",
+        "kind": "supported",
+        "question": "How many parking spaces does the company rent?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "24 parking spaces",
+          "citations": [
+            {
+              "doc_id": "CTR-002",
+              "section_id": "2",
+              "quote": "The Tenant rents 24 parking spaces in the garage at Verkstadsgatan 11."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q03",
+        "kind": "supported",
+        "question": "What is the rent per parking space per month?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "1 150 SEK",
+          "citations": [
+            {
+              "doc_id": "CTR-002",
+              "section_id": "3",
+              "quote": "The rent is 1 150 SEK per parking space per month excluding VAT."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q04",
+        "kind": "supported",
+        "question": "What is the total amount due on invoice 2026-0412?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "52 500 SEK",
+          "citations": [
+            {
+              "doc_id": "INV-2026-0412",
+              "section_id": "3",
+              "quote": "Total amount due: 52 500 SEK."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q05",
+        "kind": "supported",
+        "question": "When is invoice 2026-0587 due?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "2026-04-30",
+          "citations": [
+            {
+              "doc_id": "INV-2026-0587",
+              "section_id": "3",
+              "quote": "Due date: 2026-04-30."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q06",
+        "kind": "supported",
+        "question": "What is the per diem for domestic travel?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "290 SEK",
+          "citations": [
+            {
+              "doc_id": "POL-001",
+              "section_id": "3",
+              "quote": "The per diem for domestic travel is 290 SEK per full day."
+            },
+            {
+              "doc_id": "MEMO-002",
+              "section_id": "4",
+              "quote": "The per diem for domestic travel remains 290 SEK per full day."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q07",
+        "kind": "supported",
+        "question": "How long must passwords be?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "14 characters",
+          "citations": [
+            {
+              "doc_id": "POL-003",
+              "section_id": "2",
+              "quote": "Passwords must be at least 14 characters long."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q08",
+        "kind": "supported",
+        "question": "Within how many hours must security incidents be reported?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "24 hours",
+          "citations": [
+            {
+              "doc_id": "POL-003",
+              "section_id": "4",
+              "quote": "Security incidents must be reported to the IT desk within 24 hours."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q09",
+        "kind": "supported",
+        "question": "How long do the confidentiality obligations in the NDA last?",
+        "pass": false,
+        "reasons": [
+          "status insufficient_evidence, expected answered",
+          "answer lacks \"5 years\""
+        ],
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer": "No passage in the provided context supports an answer.",
+          "citations": [],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q10",
+        "kind": "supported",
+        "question": "What is the response time for priority 1 IT incidents?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "2 hours",
+          "citations": [
+            {
+              "doc_id": "SLA-005",
+              "section_id": "2",
+              "quote": "Priority 1 incidents receive a response within 2 hours."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q11",
+        "kind": "supported",
+        "question": "When will the annual fire drill take place?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "2026-09-15",
+          "citations": [
+            {
+              "doc_id": "MIN-006",
+              "section_id": "2",
+              "quote": "The annual fire drill will take place on 2026-09-15 at 10:00."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q12",
+        "kind": "supported",
+        "question": "What is the availability target for the support portal?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "99.5 percent",
+          "citations": [
+            {
+              "doc_id": "SLA-005",
+              "section_id": "3",
+              "quote": "The support portal has a monthly availability target of 99.5 percent."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q13",
+        "kind": "supported",
+        "question": "Which court settles disputes under the NDA?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "Disputes are settled by the Stockholm District Court.",
+          "citations": [
+            {
+              "doc_id": "NDA-004",
+              "section_id": "4",
+              "quote": "Disputes are settled by the Stockholm District Court."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q14",
+        "kind": "supported",
+        "question": "What is the deposit for the parking lease?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "27 600 SEK",
+          "citations": [
+            {
+              "doc_id": "CTR-002",
+              "section_id": "5",
+              "quote": "The Tenant pays a deposit of 27 600 SEK before access cards are issued."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q15",
+        "kind": "updated",
+        "question": "What is the monthly fee for office cleaning?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "46 500 SEK",
+          "citations": [
+            {
+              "doc_id": "CTR-001",
+              "section_id": "4",
+              "quote": "Following amendment 1, the monthly fee is 46 500 SEK excluding VAT from 2026-07-01."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q16",
+        "kind": "updated",
+        "question": "When does the cleaning agreement end?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "answered",
+          "answer": "2027-06-30",
+          "citations": [
+            {
+              "doc_id": "CTR-001",
+              "section_id": "3",
+              "quote": "Following amendment 1, the agreement ends on 2027-06-30."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q17",
+        "kind": "updated",
+        "question": "From which date does the new cleaning fee apply?",
+        "pass": false,
+        "reasons": [
+          "status insufficient_evidence, expected answered",
+          "answer lacks \"2026-07-01\""
+        ],
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer": "No passage in the provided context supports an answer.",
+          "citations": [],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q18",
+        "kind": "contradiction",
+        "question": "What is the hotel cost limit per night?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "conflict",
+          "answer": "The sources disagree: MEMO-002 §2 says 2 200 SEK; POL-001 §2 says 1 800 SEK.",
+          "citations": [
+            {
+              "doc_id": "MEMO-002",
+              "section_id": "2",
+              "quote": "The hotel cost limit is 2 200 SEK per night including breakfast."
+            },
+            {
+              "doc_id": "POL-001",
+              "section_id": "2",
+              "quote": "The hotel cost limit is 1 800 SEK per night including breakfast."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q19",
+        "kind": "contradiction",
+        "question": "Within how many days must expense claims with receipts be submitted?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "conflict",
+          "answer": "The sources disagree: POL-001 §4 says 30 days; MEMO-002 §3 says 45 days.",
+          "citations": [
+            {
+              "doc_id": "POL-001",
+              "section_id": "4",
+              "quote": "Expense claims with receipts must be submitted within 30 days of the purchase."
+            },
+            {
+              "doc_id": "MEMO-002",
+              "section_id": "3",
+              "quote": "Expense claims with receipts must be submitted within 45 days of the purchase."
+            }
+          ],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q20",
+        "kind": "unsupported",
+        "question": "What is the monthly rent for the office premises?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer": "No passage in the provided context supports an answer.",
+          "citations": [],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q21",
+        "kind": "unsupported",
+        "question": "Who is the CEO of Skärlunda Städ AB?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer": "No passage in the provided context supports an answer.",
+          "citations": [],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q22",
+        "kind": "unsupported",
+        "question": "How many vacation days do employees get?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer": "No passage in the provided context supports an answer.",
+          "citations": [],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q23",
+        "kind": "unsupported",
+        "question": "What is the penalty for late delivery of cleaning services?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer": "No passage in the provided context supports an answer.",
+          "citations": [],
+          "dataset_version": "bizdocs-v1"
+        }
+      },
+      {
+        "id": "Q24",
+        "kind": "unsupported",
+        "question": "What is the fee for window cleaning?",
+        "pass": true,
+        "reasons": [],
+        "answer": {
+          "status": "insufficient_evidence",
+          "answer": "No passage in the provided context supports an answer.",
+          "citations": [],
+          "dataset_version": "bizdocs-v1"
+        }
+      }
+    ]
+  },
+  "context": {
+    "budget": 500,
+    "dialogue_turns": 44,
+    "full_transcript_tokens_est": 940,
+    "strategies": [
+      {
+        "strategy": "full_history",
+        "correct": 9,
+        "total": 11,
+        "outcomes": {
+          "correct": 9,
+          "stale_blocked_by_verifier": 2
+        },
+        "probe_tokens_est": {
+          "mean": 951,
+          "max": 955
+        },
+        "probes_over_budget": 11,
+        "max_turn_context_est": 927,
+        "turns_over_budget": 10
+      },
+      {
+        "strategy": "truncation",
+        "correct": 3,
+        "total": 11,
+        "outcomes": {
+          "abstained": 8,
+          "correct": 3
+        },
+        "probe_tokens_est": {
+          "mean": 478,
+          "max": 482
+        },
+        "probes_over_budget": 0,
+        "max_turn_context_est": 499,
+        "turns_over_budget": 0
+      },
+      {
+        "strategy": "source_bound_summary",
+        "correct": 9,
+        "total": 11,
+        "outcomes": {
+          "abstained": 2,
+          "correct": 9
+        },
+        "probe_tokens_est": {
+          "mean": 497,
+          "max": 500
+        },
+        "probes_over_budget": 0,
+        "max_turn_context_est": 499,
+        "turns_over_budget": 0
+      }
+    ],
+    "probes": [
+      {
+        "probe": "D01",
+        "kind": "user_fact",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "For reference, my budget case number is FAC-2291.",
+        "proposed": "answered: For reference, my budget case number is FAC-2291.",
+        "sources": [
+          "turn:5"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 948,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D02",
+        "kind": "user_fact",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "Please remember that the cost centre for facilities is 4410.",
+        "proposed": "answered: Please remember that the cost centre for facilities is 4410.",
+        "sources": [
+          "turn:17"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 950,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D03",
+        "kind": "user_fact",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "2026-11-12",
+        "proposed": "answered: 2026-11-12",
+        "sources": [
+          "turn:13"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 950,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D04",
+        "kind": "user_fact",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "Our preferred contact at the cleaning company is Mira, reachable at mira@skarlunda.example.",
+        "proposed": "answered: Our preferred contact at the cleaning company is Mira, reachable at mira@skarlunda.example.",
+        "sources": [
+          "turn:27"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 954,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D05",
+        "kind": "updated_doc_fact",
+        "strategy": "full_history",
+        "outcome": "stale_blocked_by_verifier",
+        "status": "insufficient_evidence",
+        "answer": "Answer withheld: citation check failed (stale: quote matches CTR-001 §4 v1, current is v2).",
+        "proposed": "answered: 42 000 SEK",
+        "sources": [],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [
+          "stale: quote matches CTR-001 §4 v1, current is v2"
+        ],
+        "tokens_est": 951,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D06",
+        "kind": "updated_doc_fact",
+        "strategy": "full_history",
+        "outcome": "stale_blocked_by_verifier",
+        "status": "insufficient_evidence",
+        "answer": "Answer withheld: citation check failed (stale: quote matches CTR-001 §3 v1, current is v2).",
+        "proposed": "answered: 2027-01-31",
+        "sources": [],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [
+          "stale: quote matches CTR-001 §3 v1, current is v2"
+        ],
+        "tokens_est": 950,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D07",
+        "kind": "early_doc_fact",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "24 parking spaces",
+        "proposed": "answered: 24 parking spaces",
+        "sources": [
+          "CTR-002#2"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 952,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D08",
+        "kind": "early_doc_fact",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "2 hours",
+        "proposed": "answered: 2 hours",
+        "sources": [
+          "SLA-005#2"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 954,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D09",
+        "kind": "recent_doc_fact",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "14 characters",
+        "proposed": "answered: 14 characters",
+        "sources": [
+          "POL-003#2"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 947,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D10",
+        "kind": "contradiction",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "conflict",
+        "answer": "The sources disagree: MEMO-002 §2 says 2 200 SEK; POL-001 §2 says 1 800 SEK.",
+        "proposed": "conflict: The sources disagree: MEMO-002 §2 says 2 200 SEK; POL-001 §2 says 1 800 SEK.",
+        "sources": [
+          "MEMO-002#2",
+          "POL-001#2"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 950,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D11",
+        "kind": "unsupported",
+        "strategy": "full_history",
+        "outcome": "correct",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 955,
+        "over_budget": true,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D01",
+        "kind": "user_fact",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 475,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D02",
+        "kind": "user_fact",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 477,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D03",
+        "kind": "user_fact",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 477,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D04",
+        "kind": "user_fact",
+        "strategy": "truncation",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "Our preferred contact at the cleaning company is Mira, reachable at mira@skarlunda.example.",
+        "proposed": "answered: Our preferred contact at the cleaning company is Mira, reachable at mira@skarlunda.example.",
+        "sources": [
+          "turn:27"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 481,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D05",
+        "kind": "updated_doc_fact",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 478,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D06",
+        "kind": "updated_doc_fact",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 477,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D07",
+        "kind": "early_doc_fact",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 479,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D08",
+        "kind": "early_doc_fact",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 481,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D09",
+        "kind": "recent_doc_fact",
+        "strategy": "truncation",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "14 characters",
+        "proposed": "answered: 14 characters",
+        "sources": [
+          "POL-003#2"
+        ],
+        "evidence_from": [
+          "turn"
+        ],
+        "verify_problems": [],
+        "tokens_est": 474,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D10",
+        "kind": "contradiction",
+        "strategy": "truncation",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 477,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D11",
+        "kind": "unsupported",
+        "strategy": "truncation",
+        "outcome": "correct",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 482,
+        "over_budget": false,
+        "stale_dropped": []
+      },
+      {
+        "probe": "D01",
+        "kind": "user_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 498,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D02",
+        "kind": "user_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "Please remember that the cost centre for facilities is 4410.",
+        "proposed": "answered: Please remember that the cost centre for facilities is 4410.",
+        "sources": [
+          "turn:17"
+        ],
+        "evidence_from": [
+          "summary"
+        ],
+        "verify_problems": [],
+        "tokens_est": 500,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D03",
+        "kind": "user_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "abstained",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 499,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D04",
+        "kind": "user_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "Our preferred contact at the cleaning company is Mira, reachable at mira@skarlunda.example.",
+        "proposed": "answered: Our preferred contact at the cleaning company is Mira, reachable at mira@skarlunda.example.",
+        "sources": [
+          "turn:27"
+        ],
+        "evidence_from": [
+          "summary"
+        ],
+        "verify_problems": [],
+        "tokens_est": 499,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D05",
+        "kind": "updated_doc_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "46 500 SEK",
+        "proposed": "answered: 46 500 SEK",
+        "sources": [
+          "CTR-001#4"
+        ],
+        "evidence_from": [
+          "section"
+        ],
+        "verify_problems": [],
+        "tokens_est": 499,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D06",
+        "kind": "updated_doc_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "2027-06-30",
+        "proposed": "answered: 2027-06-30",
+        "sources": [
+          "CTR-001#3"
+        ],
+        "evidence_from": [
+          "section"
+        ],
+        "verify_problems": [],
+        "tokens_est": 499,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D07",
+        "kind": "early_doc_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "24 parking spaces",
+        "proposed": "answered: 24 parking spaces",
+        "sources": [
+          "CTR-002#2"
+        ],
+        "evidence_from": [
+          "section"
+        ],
+        "verify_problems": [],
+        "tokens_est": 493,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D08",
+        "kind": "early_doc_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "2 hours",
+        "proposed": "answered: 2 hours",
+        "sources": [
+          "SLA-005#2"
+        ],
+        "evidence_from": [
+          "section"
+        ],
+        "verify_problems": [],
+        "tokens_est": 500,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D09",
+        "kind": "recent_doc_fact",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "answered",
+        "answer": "14 characters",
+        "proposed": "answered: 14 characters",
+        "sources": [
+          "POL-003#2"
+        ],
+        "evidence_from": [
+          "section"
+        ],
+        "verify_problems": [],
+        "tokens_est": 492,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D10",
+        "kind": "contradiction",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "conflict",
+        "answer": "The sources disagree: MEMO-002 §2 says 2 200 SEK; POL-001 §2 says 1 800 SEK.",
+        "proposed": "conflict: The sources disagree: MEMO-002 §2 says 2 200 SEK; POL-001 §2 says 1 800 SEK.",
+        "sources": [
+          "MEMO-002#2",
+          "POL-001#2"
+        ],
+        "evidence_from": [
+          "section"
+        ],
+        "verify_problems": [],
+        "tokens_est": 497,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      },
+      {
+        "probe": "D11",
+        "kind": "unsupported",
+        "strategy": "source_bound_summary",
+        "outcome": "correct",
+        "status": "insufficient_evidence",
+        "answer": "No passage in the provided context supports an answer.",
+        "proposed": "insufficient_evidence: No passage in the provided context supports an answer.",
+        "sources": [],
+        "evidence_from": [],
+        "verify_problems": [],
+        "tokens_est": 493,
+        "over_budget": false,
+        "stale_dropped": [
+          "turn 4: CTR-001 §4 v1 (current v2)",
+          "turn 8: CTR-001 §3 v1 (current v2)"
+        ]
+      }
+    ]
+  },
+  "sweep": [
+    {
+      "budget": 300,
+      "strategy": "full_history",
+      "correct": 9,
+      "total": 11,
+      "max_probe_tokens_est": 955,
+      "probes_over_budget": 11
+    },
+    {
+      "budget": 300,
+      "strategy": "truncation",
+      "correct": 2,
+      "total": 11,
+      "max_probe_tokens_est": 292,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 300,
+      "strategy": "source_bound_summary",
+      "correct": 7,
+      "total": 11,
+      "max_probe_tokens_est": 300,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 500,
+      "strategy": "full_history",
+      "correct": 9,
+      "total": 11,
+      "max_probe_tokens_est": 955,
+      "probes_over_budget": 11
+    },
+    {
+      "budget": 500,
+      "strategy": "truncation",
+      "correct": 3,
+      "total": 11,
+      "max_probe_tokens_est": 482,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 500,
+      "strategy": "source_bound_summary",
+      "correct": 9,
+      "total": 11,
+      "max_probe_tokens_est": 500,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 800,
+      "strategy": "full_history",
+      "correct": 9,
+      "total": 11,
+      "max_probe_tokens_est": 955,
+      "probes_over_budget": 11
+    },
+    {
+      "budget": 800,
+      "strategy": "truncation",
+      "correct": 8,
+      "total": 11,
+      "max_probe_tokens_est": 799,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 800,
+      "strategy": "source_bound_summary",
+      "correct": 11,
+      "total": 11,
+      "max_probe_tokens_est": 781,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 1200,
+      "strategy": "full_history",
+      "correct": 9,
+      "total": 11,
+      "max_probe_tokens_est": 955,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 1200,
+      "strategy": "truncation",
+      "correct": 9,
+      "total": 11,
+      "max_probe_tokens_est": 955,
+      "probes_over_budget": 0
+    },
+    {
+      "budget": 1200,
+      "strategy": "source_bound_summary",
+      "correct": 11,
+      "total": 11,
+      "max_probe_tokens_est": 889,
+      "probes_over_budget": 0
+    }
+  ]
+}
